@@ -7,7 +7,7 @@ public class Main {
         // test findPrimeFactor
         List<Integer> a = Arrays.asList(1, 2, 3, 4);
         List<Integer> b = Arrays.asList(2,3,4,5);
-        PrimeFactor.findPrimeFactor(a, b);
+        FindPrimeFactor.findPrimeFactor(a, b);
 
     }
 }

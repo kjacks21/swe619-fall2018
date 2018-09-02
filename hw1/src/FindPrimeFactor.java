@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class PrimeFactor {
+public class FindPrimeFactor {
 
     public static int findPrimeFactor (List<Integer> a, List<Integer> b) {
         // Requires: a not null; b not null;
@@ -16,7 +16,9 @@ public class PrimeFactor {
         //  answer.  index "3" is not a possible answer, because the
         //  third index is not the least index with the desired property.)
         // Also note that a[] and b[] need not be of the same length.
-
+        if (a.isEmpty()) {
+            return -1;
+        }
         return 0;
     }
 
