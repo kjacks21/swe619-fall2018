@@ -1,4 +1,7 @@
-public class hw1 {
+import java.util.List;
+
+public class PrimeFactor {
+
     public static int findPrimeFactor (List<Integer> a, List<Integer> b) {
         // Requires: a not null; b not null;
         //           there is some index i where b[i] is
@@ -14,11 +17,7 @@ public class hw1 {
         //  third index is not the least index with the desired property.)
         // Also note that a[] and b[] need not be of the same length.
 
+        return 0;
     }
 
-    public static void main(String[] args) {
-        // test findPrimeFactor
-
-
-    }
 }
