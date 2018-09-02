@@ -16,10 +16,32 @@ public class FindPrimeFactor {
         //  answer.  index "3" is not a possible answer, because the
         //  third index is not the least index with the desired property.)
         // Also note that a[] and b[] need not be of the same length.
-        if (a.isEmpty()) {
-            return -1;
+
+        // is this necessary?
+//        if (a.isEmpty()) {
+//            return -1;
+//        }
+
+        for (int i = 0; i <= b.size(); i++) {
+            if (isPrime(b.get(i)) && a.get(i) % b.get(i) == 0) {
+                return i;
+            }
         }
-        return 0;
+        return -1;
+    }
+
+    public static boolean isPrime (int n) {
+        // values less than 2 are not prime
+        if (n < 2) {
+            return false;
+        }
+        // f
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
