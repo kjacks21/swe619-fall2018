@@ -17,10 +17,6 @@ public class FindPrimeFactor {
         //  third index is not the least index with the desired property.)
         // Also note that a[] and b[] need not be of the same length.
 
-        // is this necessary?
-//        if (a.isEmpty()) {
-//            return -1;
-//        }
 
         for (int i = 0; i <= b.size(); i++) {
             if (isPrime(b.get(i)) && a.get(i) % b.get(i) == 0) {
@@ -35,7 +31,7 @@ public class FindPrimeFactor {
         if (n < 2) {
             return false;
         }
-        // f
+        // check integers less than or equal to the sqrt(n)
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;

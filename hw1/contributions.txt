@@ -1,0 +1,10 @@
+Kyle Jackson and Nat Greenwald collaborated on this assignment. Their contributions are as follows:
+
+Kyle Jackson
+- Wrote FindPrimeFactor.java code
+- Wrote initial tests
+
+
+Nat Greenwald
+- Collaborated on development of FindPrimeFactor.java code
+- Tested findPrimeFactor method in Main.java more extensively
