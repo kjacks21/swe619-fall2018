@@ -26,10 +26,19 @@ public class Main {
         assert result3 == 1;
         System.out.println(result3);
 
-        // return NPE
-//        a = Arrays.asList(12, 25, null, 8);
-//        b = Arrays.asList(6, 2, 3, 2);
-//        System.out.println(FindPrimeFactor.findPrimeFactor(a, b));
+        // return 1
+        a = Arrays.asList(9, 10);
+        b = Arrays.asList(null, 5);
+        Integer result4 = FindPrimeFactor.findPrimeFactor(a, b);
+        assert result4 == 1;
+        System.out.println(result4);
+
+        // return 1
+        a = Arrays.asList(null, 10);
+        b = Arrays.asList(null, 5);
+        Integer result5 = FindPrimeFactor.findPrimeFactor(a, b);
+        assert result5 == 1;
+        System.out.println(result5);
 
     }
 }

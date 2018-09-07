@@ -19,7 +19,12 @@ public class FindPrimeFactor {
 
 
         for (int i = 0; i <= b.size(); i++) {
-            if (isPrime(b.get(i)) && a.get(i) % b.get(i) == 0) {
+            // check if either element is null
+            if (a.get(i) == null || b.get(i) == null) {
+                // do nothing
+            }
+
+            else if (isPrime(b.get(i)) && a.get(i) % b.get(i) == 0) {
                 return i;
             }
         }
@@ -31,6 +36,7 @@ public class FindPrimeFactor {
         if (n < 2) {
             return false;
         }
+
         // check integers less than or equal to the sqrt(n)
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
