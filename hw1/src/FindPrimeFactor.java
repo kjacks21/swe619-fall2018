@@ -18,7 +18,7 @@ public class FindPrimeFactor {
         // Also note that a[] and b[] need not be of the same length.
 
 
-        for (int i = 0; i <= b.size(); i++) {
+        for (int i = 0; i < b.size(); i++) {
             // check if either element is null
             if (a.get(i) == null || b.get(i) == null) {
                 // do nothing
