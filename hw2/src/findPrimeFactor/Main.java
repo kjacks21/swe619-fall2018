@@ -58,6 +58,14 @@ public class Main {
             System.out.println("NPE for null b, as expected");
         }
 
+        // throw IllegalArgumentException
+        a = Arrays.asList(12, 1, 18, 8);
+        b = Arrays.asList(6, 2, 9, 4);
+        try { Integer result8 = FindPrimeFactor.findPrimeFactor(a, b); }
+        catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException thrown, as expected");
+        }
+
     }
 
 }
