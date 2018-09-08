@@ -53,7 +53,7 @@ public class Main {
         // null b returns NPE
         a = Arrays.asList(6, 2, 3, 2);
         b = null;
-        try { Integer result6 = FindPrimeFactor.findPrimeFactor(a, b); }
+        try { Integer result7 = FindPrimeFactor.findPrimeFactor(a, b); }
         catch (NullPointerException e) {
             System.out.println("NPE for null b, as expected");
         }
