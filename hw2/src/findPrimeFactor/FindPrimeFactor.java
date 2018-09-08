@@ -5,12 +5,13 @@ import java.util.List;
 public class FindPrimeFactor {
 
     public static int findPrimeFactor (List<Integer> a, List<Integer> b) throws NullPointerException {
-        // Requires: a not null; b not null;
-        //           there is some index i where b[i] is
+        // Requires: there is some index i where b[i] is
         //           both prime and a factor of a[i]
         //
-        // Effects: return the least index
-        //          at which b[i] is a prime factor of a[i]
+        // Effects: If a is null throw NPE,
+        //          else if b is null throws NPE,
+        //          else return the least index at which b[i] is a prime factor of a[i]
+        //
         // E.g. findPrimeFactor ([12, 25, 18, 8], [6, 2, 3, 2]) = 2
         // (Note: 6 is a factor of 12, but is not prime,
         //  and 2 is prime, but is not a factor of 25.  However,
