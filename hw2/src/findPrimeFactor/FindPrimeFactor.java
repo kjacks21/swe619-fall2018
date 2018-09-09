@@ -4,6 +4,17 @@ import java.util.List;
 
 public class FindPrimeFactor {
 
+	/**
+	 * Finds the least index i where b[i] is a prime factor of a[i]
+	 * 
+	 * @param  a a list of integers
+	 * @param  b a list of integers with possible prime factors of list a
+	 * @return the least index at which b[i] is a prime factor of a[i]
+	 * 
+	 * @throws NullPointerException  if either list is null
+	 * @throws IllegalArgumentException if there does not exist index [i] where 
+	 * b[i] is both prime and a factor of a[i]
+	 */
     public static int findPrimeFactor (List<Integer> a, List<Integer> b)
             throws NullPointerException, IllegalArgumentException {
         // Effects: If a is null throw NPE,
@@ -30,7 +41,12 @@ public class FindPrimeFactor {
         }
         throw new IllegalArgumentException("No index i where b[i] is both prime and a factor of a[i]");
     }
-
+	
+	/**
+     * Returns true if the integer argument n is prime
+     * @param n an integer 
+     * @return true if n is prime
+     */
     public static boolean isPrime (int n) {
         // values less than 2 are not prime
         if (n < 2) {
