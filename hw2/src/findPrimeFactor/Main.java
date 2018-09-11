@@ -66,6 +66,42 @@ public class Main {
             System.out.println("IllegalArgumentException thrown, as expected");
         }
 
+        // throw IllegalArgumentException
+        a = Arrays.asList(1);
+        b = Arrays.asList();
+        try { Integer result9 = FindPrimeFactor.findPrimeFactor(a, b); }
+        catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException thrown, as expected");
+        }
+
+        // return 0
+        a = Arrays.asList(8);
+        b = Arrays.asList(2);
+        Integer result10 = FindPrimeFactor.findPrimeFactor(a, b);
+        assert result10 == 0;
+        System.out.println(result10);
+
+        // throw IllegalArgumentException
+        a = Arrays.asList();
+        b = Arrays.asList(2);
+        try { Integer result11 = FindPrimeFactor.findPrimeFactor(a, b); }
+        catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException thrown, as expected");
+        }
+
+        // return 2
+        a = Arrays.asList(-12, 25, 18, 8);
+        b = Arrays.asList(6, -2, 3, 2);
+        Integer result12 = FindPrimeFactor.findPrimeFactor(a, b);
+        assert result12 == 2;
+        System.out.println(result12);
+
+        // return 2
+        a = Arrays.asList(0, 2, 18, 8);
+        b = Arrays.asList(6, 0, 3, 2);
+        Integer result13 = FindPrimeFactor.findPrimeFactor(a, b);
+        assert result13 == 1;
+        System.out.println(result13);
     }
 
 }
