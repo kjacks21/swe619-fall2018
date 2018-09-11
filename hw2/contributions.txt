@@ -1,0 +1,26 @@
+Project team
+-------------
+Kyle Jackson,
+Nat Greenwald, and
+Stefan Soto
+
+Their contributions are as follows:
+
+Stefan Soto
+- Researched proper specs for javaDocs and implemented the javaDocs
+- Contributed to the discussion on what exceptions to throw
+
+Kyle Jackson
+- Implemented exception handling for third precondition (index i must exist where b[i] is both prime and factor of a[i])
+- Implemented exception handling for empty lists
+- Implemented additional tests
+- Modified the contract Effects clause
+- Contributed to the discussion on what exceptions to throw
+
+
+Nat Greenwald
+- Implemented exception handling for the first two preconditions (null input)
+- Modified contract Effects clause
+- Contributed to the discussion on what exceptions to throw
+
+All project members attest that each member contributed substantially and equally.
