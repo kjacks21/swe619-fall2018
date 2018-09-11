@@ -1,7 +1,14 @@
+# pyCharm
 .idea/
+.DS_Store
+*.iml
 
+# compiled files
+production/
 *.class
 
 *.zip
 
-.DS_Store
+
+
+
