@@ -1,0 +1,19 @@
+Project team
+-------------
+Kyle Jackson,
+Nat Greenwald, and
+Stefan Soto
+
+Their contributions are as follows:
+
+Stefan Soto
+- ...
+
+Kyle Jackson
+- ...
+
+
+Nat Greenwald
+- ...
+
+All project members attest that each member contributed substantially and equally.
