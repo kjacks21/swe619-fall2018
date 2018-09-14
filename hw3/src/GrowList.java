@@ -4,11 +4,14 @@ public class GrowList <E> {
 
     private Map<Integer,E> values;
 
-    public GrowList() { values = new HashMap<Integer,E>();}
+    private GrowList() { values = new HashMap<Integer,E>();}
 
     // add to the end of the list
-    public void add(E o) {
-        values.put(size(), o);
+    public GrowList add(E o) {
+        GrowList<E> result = new GrowList<E>();
+        result.values = values;
+        result.values.put(size(), o);
+        return result;
     }
 
     // number of values in list
@@ -20,6 +23,7 @@ public class GrowList <E> {
         return values.get(i);
     }
 
+    // TODO break into producer and observer
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
@@ -42,9 +46,9 @@ public class GrowList <E> {
         GrowList<String> list = new GrowList<String>();
 
         System.out.println("list is:" + list);
-        list.add("cat");
+        list = list.add("cat");
         System.out.println("list is:" + list);
-        list.add("dog");
+        list = list.add("dog");
         System.out.println("list is:" + list);
         list.set(1,"bat");
         System.out.println("list is:" + list);
