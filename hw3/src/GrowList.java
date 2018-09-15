@@ -23,7 +23,6 @@ public class GrowList <E> {
         return values.get(i);
     }
 
-    // TODO break into producer and observer
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
