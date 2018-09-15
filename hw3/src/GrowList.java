@@ -27,7 +27,18 @@ public class GrowList <E> {
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
-        return values.put(i, o);
+        // producer
+        GrowList<E> result = new GrowList<E>();
+        for (Integer j = 0; j < size(); j++) {
+            if (j == i) {
+                result.add(o);
+            } else {
+                result.add(values.get(j));
+            }
+        }
+        values = result.values;
+        // observer
+        return values.get(i);
     }
 
     // private helper method
@@ -51,6 +62,12 @@ public class GrowList <E> {
         list = list.add("dog");
         System.out.println("list is:" + list);
         list.set(1,"bat");
+        System.out.println("list is:" + list);
+        list.set(0, "snake");
+        System.out.println("list is:" + list);
+        list.add("frog");
+        System.out.println("list is:" + list);
+        list.set(2, "black widow");
         System.out.println("list is:" + list);
 
     }
