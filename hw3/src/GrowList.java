@@ -3,13 +3,21 @@ import java.util.*;
 public class GrowList <E> {
 
     private Map<Integer,E> values;
+    private Map<Integer,E> new_values;
 
-    private GrowList() { values = new HashMap<Integer,E>();}
+    // constructors
+    public GrowList() { values = new HashMap<Integer,E>();}
+
+    private GrowList(Map old_map) {
+        values = new HashMap<Integer,E>();
+        values.putAll(old_map);
+    }
+
+
 
     // add to the end of the list
     public GrowList add(E o) {
-        GrowList<E> result = new GrowList<E>();
-        result.values = values;
+        GrowList<E> result = new GrowList<E>(values);
         result.values.put(size(), o);
         return result;
     }
