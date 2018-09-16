@@ -26,6 +26,16 @@ public class GrowList <E> {
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
+         // observer
+         E previous = values.get(i);
+         // producer
+         values = setNewMap(i, o);
+         return previous;
+
+    }
+
+    // private helper method
+    private Map<Integer, E> setNewMap(int i, E o) {
         // producer
         GrowList<E> result = new GrowList<E>();
         for (Integer j = 0; j < size(); j++) {
@@ -35,9 +45,7 @@ public class GrowList <E> {
                 result.add(values.get(j));
             }
         }
-        values = result.values;
-        // observer
-        return values.get(i);
+        return result.values;
     }
 
     // private helper method
