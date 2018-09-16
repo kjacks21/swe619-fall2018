@@ -13,8 +13,6 @@ public class GrowList <E> {
         values.putAll(old_map);
     }
 
-
-
     // add to the end of the list
     public GrowList add(E o) {
         GrowList<E> result = new GrowList<E>(values);
@@ -35,11 +33,10 @@ public class GrowList <E> {
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
          // observer
-         E previous = get(i);
+         E previous = values.get(i);
          // producer
          values = setNewMap(i, o);
          return previous;
-
     }
 
     // private helper method
