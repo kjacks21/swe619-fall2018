@@ -27,7 +27,7 @@ public class GrowList <E> {
     public E set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
          // observer
-         E previous = values.get(i);
+         E previous = getPrevious(i);
          // producer
          values = setNewMap(i, o);
          return previous;
@@ -46,6 +46,10 @@ public class GrowList <E> {
             }
         }
         return result.values;
+    }
+
+    private E getPrevious(Integer i) {
+        return values.get(i);
     }
 
     // private helper method
