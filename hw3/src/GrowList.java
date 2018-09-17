@@ -12,9 +12,7 @@ public class GrowList <E> {
         values.putAll(old_map);
     }
 
-    // TODO specification needs to be changed
-    // producer
-    // add to the end of the list
+    // add to end of list of new GrowList object; return new object
     public GrowList add(E o) {
         GrowList<E> result = new GrowList<E>(values);
         result.values.put(size(), o);
@@ -24,23 +22,20 @@ public class GrowList <E> {
     // number of values in list
     public int size() { return values.size(); }
 
-    // observer
     // get ith value in list
     public E get(int i) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.get");
         return values.get(i);
     }
 
-    // TODO specification needs to be changed
-    // producer
-    // update ith value in list;  return previous value or null if none
+    // update ith value in list of new GrowList object; return new object
     public GrowList set(int i, E o) {
         if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
         GrowList<E> result = new GrowList<E>(values);
         result.values.put(i, o);
         return result;
 
-
+        // TODO delete
 //        // observer
 //        E previous = values.get(i);
 //        // producer
@@ -48,19 +43,20 @@ public class GrowList <E> {
 //        return previous;
     }
 
-    // private helper method
-    private Map<Integer, E> setNewMap(int i, E o) {
-        // producer
-        GrowList<E> result = new GrowList<E>();
-        for (Integer j = 0; j < size(); j++) {
-            if (j == i) {
-                result.add(o);
-            } else {
-                result.add(values.get(j));
-            }
-        }
-        return result.values;
-    }
+    // TODO delete
+//    // private helper method
+//    private Map<Integer, E> setNewMap(int i, E o) {
+//        // producer
+//        GrowList<E> result = new GrowList<E>();
+//        for (Integer j = 0; j < size(); j++) {
+//            if (j == i) {
+//                result.add(o);
+//            } else {
+//                result.add(values.get(j));
+//            }
+//        }
+//        return result.values;
+//    }
 
     // private helper method
     private boolean inRange(int i) { return (i >= 0) && (i < size()); }
