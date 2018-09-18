@@ -34,29 +34,7 @@ public class GrowList <E> {
         GrowList<E> result = new GrowList<E>(values);
         result.values.put(i, o);
         return result;
-
-        // TODO delete
-//        // observer
-//        E previous = values.get(i);
-//        // producer
-//        values = setNewMap(i, o);
-//        return previous;
     }
-
-    // TODO delete
-//    // private helper method
-//    private Map<Integer, E> setNewMap(int i, E o) {
-//        // producer
-//        GrowList<E> result = new GrowList<E>();
-//        for (Integer j = 0; j < size(); j++) {
-//            if (j == i) {
-//                result.add(o);
-//            } else {
-//                result.add(values.get(j));
-//            }
-//        }
-//        return result.values;
-//    }
 
     // private helper method
     private boolean inRange(int i) { return (i >= 0) && (i < size()); }
