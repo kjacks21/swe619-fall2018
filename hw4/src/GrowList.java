@@ -1,10 +1,25 @@
 import java.util.*;
 //  GrowList is a mutable list that only gets longer.
 public class GrowList <E> {
+    // The rep invariant is
+    //     GrowList.values != null &&
+    //     all elements of GrowList.values are Strings &&
+    //     all elements of GrowList.values must not be empty Strings &&
+    //     GrowList.size() does not decrease
 
     private Map<Integer,E> values;
 
     public GrowList() { values = new HashMap<Integer,E>();}
+
+    public boolean repOK() {
+        if (values == null) return false;
+        for (int i = 0; i < values.size(); i++)  {
+            E x = values.get(i);
+            if (!(x instanceof String)) return false;
+            if (x.equals("")) return false;
+        }
+        return true;
+    }
 
     // add to the end of the list
     public void add(E o) {
@@ -47,6 +62,12 @@ public class GrowList <E> {
         list.add("dog");
         System.out.println("list is:" + list);
         list.set(1,"bat");
+        System.out.println("list is:" + list);
+        list.set(1, null);
+        System.out.println("list is:" + list);
+        list.add("dog");
+        System.out.println("list is:" + list);
+        list.add("dog");
         System.out.println("list is:" + list);
 
     }
