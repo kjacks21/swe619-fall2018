@@ -33,7 +33,8 @@ public class GrowList <E> {
 
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
-        if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
+    	//causes method contract to be violated
+        //if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
         return values.put(i, o);
     }
 
