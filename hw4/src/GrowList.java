@@ -3,9 +3,7 @@ import java.util.*;
 public class GrowList <E> {
     // The rep invariant is
     //     GrowList.values != null &&
-    //     all elements of GrowList.values are Strings &&
-    //     all elements of GrowList.values must not be empty Strings &&
-    //     GrowList.size() does not decrease
+    //     all keys of GrowList.values are Integers
 
     private Map<Integer,E> values;
 
@@ -13,10 +11,8 @@ public class GrowList <E> {
 
     public boolean repOK() {
         if (values == null) return false;
-        for (int i = 0; i < values.size(); i++)  {
-            E x = values.get(i);
-            if (!(x instanceof String)) return false;
-            if (x.equals("")) return false;
+        for (Integer key : values.keySet()) {
+            if (!(key instanceof Integer)) return false;
         }
         return true;
     }
