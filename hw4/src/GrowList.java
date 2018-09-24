@@ -7,7 +7,9 @@ public class GrowList <E> {
 
     private Map<Integer,E> values;
 
-    public GrowList() { values = new HashMap<Integer,E>();}
+    public GrowList() {
+//        values = new HashMap<Integer,E>();
+    }
 
     public boolean repOK() {
         if (values == null) return false;
@@ -52,20 +54,21 @@ public class GrowList <E> {
 
     public static void main(String[] args) {
         GrowList<String> list = new GrowList<String>();
+        System.out.println("values:" + list.values);
 
-        System.out.println("list is:" + list);
-        list.add("cat");
-        System.out.println("list is:" + list);
-        list.add("dog");
-        System.out.println("list is:" + list);
-        list.set(1,"bat");
-        System.out.println("list is:" + list);
-        list.set(1, null);
-        System.out.println("list is:" + list);
-        list.add("dog");
-        System.out.println("list is:" + list);
-        list.add("dog");
-        System.out.println("list is:" + list);
+//        System.out.println("list is:" + list);
+//        list.add("cat");
+//        System.out.println("list is:" + list);
+//        list.add("dog");
+//        System.out.println("list is:" + list);
+//        list.set(1,"bat");
+//        System.out.println("list is:" + list);
+//        list.set(1, null);
+//        System.out.println("list is:" + list);
+//        list.add("dog");
+//        System.out.println("list is:" + list);
+//        list.add("dog");
+//        System.out.println("list is:" + list);
 
     }
 }
