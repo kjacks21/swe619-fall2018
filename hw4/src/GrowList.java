@@ -8,7 +8,8 @@ public class GrowList <E> {
     private Map<Integer,E> values;
 
     public GrowList() {
-//        values = new HashMap<Integer,E>();
+        // SDL that causes rep-invariant to be violated; allows values to be null.
+        // values = new HashMap<Integer,E>();
     }
 
     public boolean repOK() {
@@ -35,7 +36,8 @@ public class GrowList <E> {
 
     // update ith value in list;  return previous value or null if none
     public E set(int i, E o) {
-    	//causes method contract to be violated
+
+        // SDL that causes method contract to be violated
         //if (! inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
         return values.put(i, o);
     }
@@ -54,21 +56,20 @@ public class GrowList <E> {
 
     public static void main(String[] args) {
         GrowList<String> list = new GrowList<String>();
-        System.out.println("values:" + list.values);
 
-//        System.out.println("list is:" + list);
-//        list.add("cat");
-//        System.out.println("list is:" + list);
-//        list.add("dog");
-//        System.out.println("list is:" + list);
-//        list.set(1,"bat");
-//        System.out.println("list is:" + list);
-//        list.set(1, null);
-//        System.out.println("list is:" + list);
-//        list.add("dog");
-//        System.out.println("list is:" + list);
-//        list.add("dog");
-//        System.out.println("list is:" + list);
+        System.out.println("list is:" + list);
+        list.add("cat");
+        System.out.println("list is:" + list);
+        list.add("dog");
+        System.out.println("list is:" + list);
+        list.set(1,"bat");
+        System.out.println("list is:" + list);
+        list.set(1, null);
+        System.out.println("list is:" + list);
+        list.add("dog");
+        System.out.println("list is:" + list);
+        list.add("dog");
+        System.out.println("list is:" + list);
 
     }
 }
