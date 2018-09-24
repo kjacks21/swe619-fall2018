@@ -9,6 +9,7 @@ public class GrowList <E> {
 
     public GrowList() {
         // SDL that causes rep-invariant to be violated; allows values to be null.
+        // It is not possible to break the rep invariant and not break the contract; this will also break the contract.
         // values = new HashMap<Integer,E>();
     }
 
