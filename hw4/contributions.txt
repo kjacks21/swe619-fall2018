@@ -1,0 +1,22 @@
+Project team, HW4, SWE 619, 9/25/2018
+-------------
+Kyle Jackson,
+Nat Greenwald, and
+Stefan Soto
+
+Their contributions are as follows:
+
+Stefan Soto
+- Implemented the SDL mutant that causes the method contract to be violated and implemented the corresponding JUnit test
+- contributed to discussion regarding all facets of the assignment
+
+Kyle Jackson
+- determined the rep-invariant and implemented repOK()
+- contributed to discussion regarding all facets of the assignment
+
+
+Nat Greenwald
+- Implemented the SDL mutant that causes the rep-invariant to fail and implemented the corresponding JUnit test.
+- contributed to discussion regarding all facets of the assignment
+
+All project members attest that each member contributed substantially and equally.
