@@ -33,41 +33,42 @@ public class GrowList<E>{
             throw new NoSuchElementException("GrowList.values");
         }
     }
-        // add to the end of the list
-        public void add(E o) {
-            values.put(size(), o);
-        }
 
-        // number of values in list
-        public int size() {
-            return values.size();
-        }
+    // add to the end of the list
+    public void add(E o) {
+        values.put(size(), o);
+    }
 
-        // get ith value in list
-        public E get(int i) {
-            if (!inRange(i)) throw new IndexOutOfBoundsException("GrowList.get");
-            return values.get(i);
-        }
+    // number of values in list
+    public int size() {
+        return values.size();
+    }
 
-        // update ith value in list;  return previous value or null if none
-        public E set(int i, E o) {
-            if (!inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
-            return values.put(i, o);
-        }
+    // get ith value in list
+    public E get(int i) {
+        if (!inRange(i)) throw new IndexOutOfBoundsException("GrowList.get");
+        return values.get(i);
+    }
 
-        // private helper method
-        private boolean inRange(int i) {
-            return (i >= 0) && (i < size());
-        }
+    // update ith value in list;  return previous value or null if none
+    public E set(int i, E o) {
+        if (!inRange(i)) throw new IndexOutOfBoundsException("GrowList.set");
+        return values.put(i, o);
+    }
 
-        public String toString() {
-            if (size() == 0) return "[]";
-            String result = "[";
-            for (int i = 0; i < size() - 1; i++) {
-                result += values.get(i) + ",";
-            }
-            return result + values.get(size() - 1) + "]";
+    // private helper method
+    private boolean inRange(int i) {
+        return (i >= 0) && (i < size());
+    }
+
+    public String toString() {
+        if (size() == 0) return "[]";
+        String result = "[";
+        for (int i = 0; i < size() - 1; i++) {
+            result += values.get(i) + ",";
         }
+        return result + values.get(size() - 1) + "]";
+    }
 
 //    public static void main(String[] args) {
 //        GrowList<String> list = new GrowList<String>();
