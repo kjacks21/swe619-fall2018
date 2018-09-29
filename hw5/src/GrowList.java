@@ -10,6 +10,23 @@ public class GrowList<E>{
 
     // inner class
     private static class GrowListGen implements Iterator {
+
+        public boolean hasNext() {
+            // TODO need to be fixed
+            // EFFECTS: Returns true if there are mroe elements to yield
+            //     else returns false
+            return true;
+        }
+
+        public Object next () throws NoSuchElementException {
+            // TODO need to be fixed
+            // MODIFIES: this
+            // EFFECTS: If there are more results to yield, returns the next result
+            //    and modifies the state of this to record the yield.
+            //    Otherwise, throws NoSuchElementException
+            throw new NoSuchElementException("GrowList.values");
+        }
+
         // add to the end of the list
         public void add(E o) {
             values.put(size(), o);
