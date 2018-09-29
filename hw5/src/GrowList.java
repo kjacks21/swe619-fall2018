@@ -6,11 +6,17 @@ public class GrowList<E>{
 
     public Iterator values () {return new GrowListGen(this);}
 
-//    public GrowList() { values = new HashMap<Integer,E>();}
+    public GrowList() { values = new HashMap<Integer,E>();}
 
     // inner class
-    private static class GrowListGen implements Iterator {
+    private static class GrowListGen<E> implements Iterator {
 
+    	private GrowList<E> growList;
+    	
+    	GrowListGen(GrowList<E> gl){
+    		growList = gl;
+    	}
+    	
         public boolean hasNext() {
             // TODO need to be fixed
             // EFFECTS: Returns true if there are mroe elements to yield
@@ -26,7 +32,7 @@ public class GrowList<E>{
             //    Otherwise, throws NoSuchElementException
             throw new NoSuchElementException("GrowList.values");
         }
-
+    }
         // add to the end of the list
         public void add(E o) {
             values.put(size(), o);
@@ -75,5 +81,5 @@ public class GrowList<E>{
 //        System.out.println("list is:" + list);
 //
 //    }
-    }
+    
 }
