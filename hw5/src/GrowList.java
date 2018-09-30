@@ -11,26 +11,32 @@ public class GrowList<E>{
     // inner class
     private static class GrowListGen<E> implements Iterator {
 
-    	private GrowList<E> growList;
+    	private GrowList<E> growList;  // the GrowList being iterated
+        private int n;  // next term to consider
     	
     	GrowListGen(GrowList<E> gl){
     		growList = gl;
+    		n = 0;
     	}
     	
         public boolean hasNext() {
             // TODO need to be fixed
-            // EFFECTS: Returns true if there are mroe elements to yield
+            // EFFECTS: Returns true if there are more elements to yield
             //     else returns false
             return true;
         }
 
         public Object next () throws NoSuchElementException {
-            // TODO need to be fixed
+    	    // TODO still work in progress and needs JUnit test
             // MODIFIES: this
             // EFFECTS: If there are more results to yield, returns the next result
             //    and modifies the state of this to record the yield.
             //    Otherwise, throws NoSuchElementException
-            throw new NoSuchElementException("GrowList.values");
+            if (growList.size() == 0 || growList.size() == n) {
+                throw new NoSuchElementException("GrowList.values");
+            }
+            n = n + 1;
+            return growList.get(n);
         }
     }
 
