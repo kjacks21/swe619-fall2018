@@ -13,6 +13,7 @@ public class GrowList<E>{
 
     	private GrowList<E> growList;  // the GrowList being iterated
         private int n;  // next term to consider
+        private E prev;  // current
     	
     	GrowListGen(GrowList<E> gl){
     		growList = gl;
@@ -22,14 +23,10 @@ public class GrowList<E>{
         public boolean hasNext() {
             // EFFECTS: Returns true if there are more elements to yield
             //     else returns false
-//            if (growList.size() == 0 || growList.size() == n)
-//                return false;
-//            return true;
             return n < growList.size();
         }
 
-        public Object next () throws NoSuchElementException {
-    	    // TODO still work in progress and needs JUnit test
+        public E next () throws NoSuchElementException {
             // MODIFIES: this
             // EFFECTS: If there are more results to yield, returns the next result
             //    and modifies the state of this to record the yield.
@@ -37,7 +34,7 @@ public class GrowList<E>{
             if (growList.size() == 0 || growList.size() == n) {
                 throw new NoSuchElementException("GrowList.values");
             }
-            E prev = growList.get(n);
+            prev = growList.get(n);
             n = n + 1;
             return prev;
         }
