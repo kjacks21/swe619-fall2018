@@ -22,9 +22,10 @@ public class GrowList<E>{
         public boolean hasNext() {
             // EFFECTS: Returns true if there are more elements to yield
             //     else returns false
-            if (growList.size() == 0 || growList.size() == n)
-                return false;
-            return true;
+//            if (growList.size() == 0 || growList.size() == n)
+//                return false;
+//            return true;
+            return n < growList.size();
         }
 
         public Object next () throws NoSuchElementException {
@@ -36,8 +37,9 @@ public class GrowList<E>{
             if (growList.size() == 0 || growList.size() == n) {
                 throw new NoSuchElementException("GrowList.values");
             }
+            E prev = growList.get(n);
             n = n + 1;
-            return growList.get(n);
+            return prev;
         }
 		
 		 public void remove() {
