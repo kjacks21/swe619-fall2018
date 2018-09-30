@@ -39,6 +39,11 @@ public class GrowList<E>{
             n = n + 1;
             return growList.get(n);
         }
+		
+		 public void remove() {
+        	throw new UnsupportedOperationException("remove not supported in GrowList");
+        }
+		
     }
 
     // add to the end of the list
