@@ -16,4 +16,17 @@ public class GrowListTest<E> {
 		iter.next();
 		iter.remove();
 	}
+
+	@Test public void testHasNext() {
+		g.add("x");
+		g.add("y");
+		g.add("z");
+		Iterator<String> iter = g.values();
+		iter.next();
+		assertEquals(true, iter.hasNext());
+		iter.next();
+		iter.next();
+		assertEquals(false, iter.hasNext());
+
+	}
 }
