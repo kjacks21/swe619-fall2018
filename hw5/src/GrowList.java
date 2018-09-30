@@ -20,9 +20,10 @@ public class GrowList<E>{
     	}
     	
         public boolean hasNext() {
-            // TODO need to be fixed
             // EFFECTS: Returns true if there are more elements to yield
             //     else returns false
+            if (growList.size() == 0 || growList.size() == n)
+                return false;
             return true;
         }
 
