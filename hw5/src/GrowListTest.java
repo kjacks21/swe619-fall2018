@@ -2,6 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class GrowListTest<E> {
 	GrowList<String> g = new GrowList<String>();
@@ -29,4 +30,10 @@ public class GrowListTest<E> {
 		assertEquals(false, iter.hasNext());
 
 	}
+
+    @Test(expected = NoSuchElementException.class)
+    public void testNext() {
+        Iterator<String> iter = g.values();
+        iter.next();
+    }
 }

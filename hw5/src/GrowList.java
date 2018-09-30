@@ -13,7 +13,7 @@ public class GrowList<E>{
 
     	private GrowList<E> growList;  // the GrowList being iterated
         private int n;  // next term to consider
-        private E prev;  // current
+        private E prev;  // current term to consider
     	
     	GrowListGen(GrowList<E> gl){
     		growList = gl;
@@ -81,17 +81,17 @@ public class GrowList<E>{
         return result + values.get(size() - 1) + "]";
     }
 
-//    public static void main(String[] args) {
-//        GrowList<String> list = new GrowList<String>();
-//
-//        System.out.println("list is:" + list);
-//        list.add("cat");
-//        System.out.println("list is:" + list);
-//        list.add("dog");
-//        System.out.println("list is:" + list);
-//        list.set(1,"bat");
-//        System.out.println("list is:" + list);
-//
-//    }
+    public static void main(String[] args) {
+        GrowList<String> list = new GrowList<String>();
+
+        System.out.println("list is:" + list);
+        list.add("cat");
+        System.out.println("list is:" + list);
+        list.add("dog");
+        System.out.println("list is:" + list);
+        list.set(1,"bat");
+        System.out.println("list is:" + list);
+
+    }
     
 }
