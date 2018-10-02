@@ -1,0 +1,24 @@
+Project team, HW5, SWE 619, 10/2/2018
+-------------
+Kyle Jackson,
+Nat Greenwald, and
+Stefan Soto
+
+Their contributions are as follows:
+
+Stefan Soto
+- contributed to implementation of the inner class skeleton (methods, signature, constructor, etc)
+- implemented remove() and corresponding JUnit test
+- contributed to discussion regarding all facets of the assignment
+
+Kyle Jackson
+- contributed to implementation of the inner class skeleton (methods, signature, constructor, etc)
+- implemented next() and corresponding JUnit test
+- contributed to discussion regarding all facets of the assignment
+
+
+Nat Greenwald
+- implemented hasNext() and corresponding JUnit test
+- contributed to discussion regarding all facets of the assignment
+
+All project members attest that each member contributed substantially and equally.
