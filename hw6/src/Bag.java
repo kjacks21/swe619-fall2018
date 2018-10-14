@@ -15,10 +15,23 @@ public class Bag<E> {
     }
 
     // add 1 occurrence of e to this
-    public void insert(E e) {...}
+    public void insert(E e) {
+        if (isIn(e))
+            map.put(e, map.get(e) + 1);
+        else
+            map.put(e, 1);
+    }
 
     // remove 1 occurrence of e from this
-    public void remove(E e) {...}
+    public void remove(E e) {
+        Integer count = map.get(e);
+        if (count > 1)
+            map.put(e, map.get(e) - 1);
+        else if (count == 1)
+            map.remove(e);
+        // throw Exception if key not in map?
+
+    }
 
     // return true iff e is in this
     public boolean isIn(E e) { return map.containsKey(e); }
@@ -28,7 +41,13 @@ public class Bag<E> {
 
     // if this is empty throw ISE
     // else return arbitrary element of this
-    public E choose() {...}
+    public E choose() throws IllegalStateException {
+        if (map.size() == 0)
+            throw new IllegalStateException("Bag is empty");
+        List<E> keysAsArray = new ArrayList<E>(map.keySet());
+        Random r = new Random();
+        return keysAsArray.get(r.nextInt(keysAsArray.size()));
+    }
 
     // conveniently, the <E,Integer> map is exactly the abstract state
     public String toString() { return map.toString(); }
