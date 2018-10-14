@@ -21,10 +21,10 @@ public class Bag<E> {
     public void remove(E e) {...}
 
     // return true iff e is in this
-    public boolean isIn(E e) {...}
+    public boolean isIn(E e) { return map.containsKey(e); }
 
     // return cardinality of this
-    public int size() {...}
+    public int size() { return map.size(); }
 
     // if this is empty throw ISE
     // else return arbitrary element of this
@@ -32,5 +32,12 @@ public class Bag<E> {
 
     // conveniently, the <E,Integer> map is exactly the abstract state
     public String toString() { return map.toString(); }
+
+    public boolean repOK() {
+        for (Integer value : map.values()) {
+            if (value < 0) return false;
+        }
+        return true;
+    }
 
 }
