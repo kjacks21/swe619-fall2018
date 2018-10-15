@@ -29,8 +29,6 @@ public class Bag<E> {
             map.put(e, map.get(e) - 1);
         else if (count == 1)
             map.remove(e);
-        // throw Exception if key not in map?
-
     }
 
     // return true iff e is in this
