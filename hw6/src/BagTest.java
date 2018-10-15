@@ -19,4 +19,40 @@ public class BagTest {
 		}
 		assertEquals(2,count);
 	}
+
+    @Test
+    public void testIsIn(){
+        // test isIn() method
+        Bag<String> b = new Bag<String>();
+        b.insert("cat");
+        assertEquals(true, b.isIn("cat"));
+    }
+
+    @Test
+    public void testIsIn1(){
+        // test isIn() method
+        Bag<String> b = new Bag<String>();
+        b.insert("cat");
+        assertEquals(false, b.isIn("dog"));
+    }
+
+	@Test
+    public void testRemove(){
+	    // test remove() method
+        Bag<String> b = new Bag<String>();
+        b.insert("cat");
+        b.insert("dog");
+        b.remove("cat");
+        assertEquals(false, b.isIn("cat"));
+    }
+
+    @Test
+    public void testChoose(){
+	    // test choose() method
+        Bag<String> b = new Bag<String>();
+        b.insert("cat");
+        b.insert("dog");
+        b.insert("bat");
+        assertEquals(true, b.isIn(b.choose()));
+    }
 }
