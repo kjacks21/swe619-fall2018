@@ -3,17 +3,16 @@ import java.util.List;
 public class IndexSearch {
 
 	private  static List<String> list;
+
 	public IndexSearch(List<String> l) {
 		list=l;
 	}
-	public void add(String x) {
-		list.add(x);
-	}
+
 	public static <E> int search (Indexer<E> c, E x){
 		 // EFFECTS: If c is null throws NullPointerException, else if
         // c is not searchable, throws ClassCastException, else
         // if x is in c returns an index where x can be found,
-        // else throws NotFoundException
+        // else throws IllegalArgumentException
 		if(c==null)
 			throw new NullPointerException("c is null");
 		else if (!c.searchable(list))

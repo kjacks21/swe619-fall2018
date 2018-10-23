@@ -1,15 +1,9 @@
 public interface Indexer<E> {
     public boolean searchable (Object o);
-//    // not sure if necessary
 
-    /*public static <E> int search (Indexer<E> c, E x) throws
-            NullPointerException, IllegalArgumentException, ClassCastException {
-        // TODO implement
-        return 0;
-    }*/
-   public int indexOf(Object o, E x); //throws NullPointerException;
+   public int indexOf(Object o, E x);
     // find element of c
 
-    public int sizeOf(Object o); //throws NullPointerException;
+    public int sizeOf(Object o);
     // determine the size of c
 }

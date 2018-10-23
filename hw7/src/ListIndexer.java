@@ -6,14 +6,7 @@ public class ListIndexer<E> implements Indexer<E>{
 
     public ListIndexer () { c = new ArrayList<E>(); }
 
-   /* public static <E> int search (Indexer<E> c, E x) throws
-            NullPointerException, IllegalArgumentException, ClassCastException {
-        // EFFECTS: If c is null throws NullPointerException, else if
-        // c is not searchable, throws ClassCastException, else
-        // if x is in c returns an index where x can be found,
-        // else throws NotFoundException
-    }*/
-    public  boolean searchable(Object o) {
+    public boolean searchable(Object o) {
 		if(o instanceof Collection<?>)
 			return true;
 		return false;
