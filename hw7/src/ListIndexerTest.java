@@ -56,7 +56,7 @@ public class ListIndexerTest<E> {
 
     @Test
     public void testSizeOf() {
-	   int size = l.sizeOf(list);
-	   assertEquals(3,size);
+        int size = l.sizeOf(list);
+        assertEquals(3,size);
     }
 }
