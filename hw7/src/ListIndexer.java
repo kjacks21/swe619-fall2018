@@ -14,7 +14,7 @@ public class ListIndexer<E> implements Indexer<E>{
 	
 	public int indexOf(Object o, E x) {
         // find element of c
-		if(o instanceof List<?>) {
+		if(searchable(o)) {
 			c =  (List<?>) o;
 		}
 		int i=0;
@@ -28,7 +28,7 @@ public class ListIndexer<E> implements Indexer<E>{
 	
 	public int sizeOf(Object o) {
 		// determine the size of c
-		if(o instanceof List<?>) {
+		if(searchable(o)) {
 			c =  (List<?>) o;
 		}
 		return c.size();
