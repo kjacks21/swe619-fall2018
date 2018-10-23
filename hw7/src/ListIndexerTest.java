@@ -9,14 +9,14 @@ import java.util.NoSuchElementException;
 
 public class ListIndexerTest<E> {
      ListIndexer<String> l = new ListIndexer<String>();
-    Searchable s;
+    IndexSearch s;
     static List<String> list;
 	/*
 	public static <E> int search (Indexer<E> c, E x){
 		
 		if(c==null)
 			throw new NullPointerException("c is null");
-		else if (!c.isSearchable(list))
+		else if (!c.isIndexSearch(list))
 			throw new ClassCastException("c cannot b searched");
 		
 		int idx =c.index(list,x);
@@ -30,7 +30,7 @@ public class ListIndexerTest<E> {
 		list.add("cat");
 		list.add("Dog");
 		list.add("Lizard");
-		s= new Searchable(list);
+		s= new IndexSearch(list);
 	}
 	
     @Test(expected = NullPointerException.class)
@@ -44,7 +44,7 @@ public class ListIndexerTest<E> {
     }
     @Test
     public void testSearch3() {
-    	int idx=Searchable.search(l,"Lizard");
+    	int idx=IndexSearch.search(l,"Lizard");
     	assertEquals(2,idx);
     }
 }

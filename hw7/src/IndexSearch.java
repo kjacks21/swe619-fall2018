@@ -3,7 +3,7 @@ import java.util.List;
 public class IndexSearch {
 
 	private  static List<String> list;
-	public Searchable(List<String> l) {
+	public IndexSearch(List<String> l) {
 		list=l;
 	}
 	public void add(String x) {
