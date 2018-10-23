@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class ListIndexerTest<E> {
-    ListIndexer<String> l = new ListIndexer<String>();
+     ListIndexer<String> l = new ListIndexer<String>();
+    Searchable s;
     static List<String> list;
-	
+	/*
 	public static <E> int search (Indexer<E> c, E x){
 		
 		if(c==null)
@@ -22,13 +23,14 @@ public class ListIndexerTest<E> {
 		if(idx==-1)
 			throw new IllegalArgumentException(x+" is not found");
 		return idx;
-	}
+	}*/
 	@Before
 	public void insert() {
 		list= new ArrayList<String>();
 		list.add("cat");
 		list.add("Dog");
 		list.add("Lizard");
+		s= new Searchable(list);
 	}
 	
     @Test(expected = NullPointerException.class)
@@ -42,7 +44,7 @@ public class ListIndexerTest<E> {
     }
     @Test
     public void testSearch3() {
-    	int idx=search(l,"Lizard");
+    	int idx=Searchable.search(l,"Lizard");
     	assertEquals(2,idx);
     }
 }
