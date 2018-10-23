@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ListIndexer<E> implements Indexer<E>{
 
-    private List<E> c;
+    private List<?> c;
 
     public ListIndexer () { c = new ArrayList<E>(); }
 
@@ -13,16 +13,17 @@ public class ListIndexer<E> implements Indexer<E>{
         // if x is in c returns an index where x can be found,
         // else throws NotFoundException
     }*/
-    
-	public boolean searchable(Object o) {
+    public  boolean searchable(Object o) {
 		if(o instanceof Collection<?>)
 			return true;
 		return false;
 	}
-
+	
 	public int indexOf(Object o, E x) {
         // find element of c
-		c = (List<E>) o;
+		if(o instanceof List<?>) {
+			c =  (List<?>) o;
+		}
 		int i=0;
 		for(i=0;i<sizeOf(c);i++) {
 			if(c.get(i).equals(x)) {
@@ -34,7 +35,9 @@ public class ListIndexer<E> implements Indexer<E>{
 	
 	public int sizeOf(Object o) {
 		// determine the size of c
-		c = (List<E>) o;
+		if(o instanceof List<?>) {
+			c =  (List<?>) o;
+		}
 		return c.size();
 	}
 }
