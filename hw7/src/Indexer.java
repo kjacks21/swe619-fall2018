@@ -1,5 +1,5 @@
 public interface Indexer {
-    public boolean searchable (Object c);
+    public boolean searchable (Object o);
 //    // not sure if necessary
 
     /*public static <E> int search (Indexer<E> c, E x) throws
@@ -7,11 +7,9 @@ public interface Indexer {
         // TODO implement
         return 0;
     }*/
-	// instead maybe public int indexOf(Collection<E> collection)
-   public int indexOf(Collection<E> collection, E x) //throws NullPointerException;
+   public int indexOf(Object o, E x) //throws NullPointerException;
     // find element of c
 
-	//public int sizeOf(Collection<E> collection)
-    public int sizeOf(Collection<E> collection) //throws NullPointerException;
+    public int sizeOf(Object o) //throws NullPointerException;
     // determine the size of c
 }
