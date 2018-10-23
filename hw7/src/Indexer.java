@@ -1,4 +1,4 @@
-public interface Indexer {
+public interface Indexer<E> {
     public boolean searchable (Object o);
 //    // not sure if necessary
 
@@ -7,9 +7,9 @@ public interface Indexer {
         // TODO implement
         return 0;
     }*/
-   public int indexOf(Object o, E x) //throws NullPointerException;
+   public int indexOf(Object o, E x); //throws NullPointerException;
     // find element of c
 
-    public int sizeOf(Object o) //throws NullPointerException;
+    public int sizeOf(Object o); //throws NullPointerException;
     // determine the size of c
 }
