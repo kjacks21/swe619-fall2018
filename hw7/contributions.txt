@@ -1,0 +1,23 @@
+Project team, HW7, SWE 619, 10/23/2018
+-------------
+Kyle Jackson,
+Nat Greenwald, and
+Stefan Soto
+
+This assignment required a lot of discussion, so everyone was involved in all aspects of this assignment.
+Their contributions are as follows:
+
+Stefan Soto
+- implemented portions of all files
+- contributed to discussion regarding all facets of the assignment
+
+Kyle Jackson
+- implemented portions of all files
+- contributed to discussion regarding all facets of the assignment
+
+
+Nat Greenwald
+- implemented portions of all files
+- contributed to discussion regarding all facets of the assignment
+
+All project members attest that each member contributed substantially and equally.
