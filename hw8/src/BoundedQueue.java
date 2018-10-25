@@ -1,71 +1,61 @@
-public class BoundedQueue {
+import java.util.*;
 
-    protected Object rep[];
-    protected int front = 0;
-    protected int back = -1;
-    protected int size = 0;
-    protected int count = 0;
+public class BoundedQueue <E> {
+
+    protected List<E> rep;
+    protected int size = 0;  // max size of queue
 
     public BoundedQueue(int size) {
         if (size > 0) {
             this.size = size;
-            rep = new Object[size];
-            back = size - 1;
+            rep = new ArrayList<>();  // should we predefine ArrayList size?
         }
     }
 
     public boolean isEmpty() {
-        return (count == 0);
+        return (rep.isEmpty());
     }
 
     public boolean isFull() {
-        return (count == size);
+        return (rep.size() == size);
     }
 
     public int getCount() {
-        return count;
+        return rep.size();
     }
 
-    public void put(Object e) {
+    public <E> void put(E e) {
         if (e != null && !isFull()) {
-            back++;
-            if (back >= size)
-                back = 0;
-            rep[back] = e;
-            count++;
+            rep.add(getCount()-1, e);
         }
     }
 
-    public Object get() {
-        Object result = null;
+    public E get() {
+        E result = null;
         if (!isEmpty()) {
-            result = rep[front];
-            rep[front] = null;
-            front++;
-            if (front >= size)
-                front = 0;
-            count--;
+            result = rep.get(0);
+            rep.remove(0);
         }
         return result;
     }
 
     public boolean repOK() {
-        // TODO implement
+        // TODO implement and generify
         return true;
     }
 
     public void putAll() {
-        // TODO implement
+        // TODO implement and generify
     }
 
     public void getAll() {
-        // TODO implement
+        // TODO implement and generify
     }
 
     public static void main(String args[]) {
         BoundedQueue queue = new BoundedQueue(10);
         for (int i = 0; !queue.isFull(); i++) {
-            queue.put(new Integer(i));
+            queue.put(i);
             System.out.println("put: " + i);
         }
         while (!queue.isEmpty()) {
