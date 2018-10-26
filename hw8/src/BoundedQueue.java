@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class BoundedQueue <E> {
+    // rep-invariant
+    // rep is not null
 
     protected List<E> rep;
     protected int size = 0;  // max size of queue
@@ -8,7 +10,7 @@ public class BoundedQueue <E> {
     public BoundedQueue(int size) {
         if (size > 0) {
             this.size = size;
-            rep = new ArrayList<>();  // should we predefine ArrayList size?
+            rep = new ArrayList<>(size);
         }
     }
 
@@ -24,9 +26,9 @@ public class BoundedQueue <E> {
         return rep.size();
     }
 
-    public <E> void put(E e) {
+    public void put(E e) {
         if (e != null && !isFull()) {
-            rep.add(getCount()-1, e);
+            rep.add(e);
         }
     }
 
