@@ -7,16 +7,16 @@ Stefan Soto
 Their contributions are as follows:
 
 Stefan Soto
-
+- implemented putAll, tests, and generified BoundedQueue.java
 - contributed to discussion regarding all facets of the assignment
 
 Kyle Jackson
-
+- implemented repOK, tests, and generified BoundedQueue.java
 - contributed to discussion regarding all facets of the assignment
 
 
 Nat Greenwald
-
+- implemented getAll, tests, and generified BoundedQueue.java
 - contributed to discussion regarding all facets of the assignment
 
 All project members attest that each member contributed substantially and equally.

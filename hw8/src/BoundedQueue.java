@@ -42,7 +42,9 @@ public class BoundedQueue <E> {
     }
 
     public boolean repOK() {
-        // TODO implement and generify
+        if ( rep == null ) {
+            return false;
+        }
         return true;
     }
 
