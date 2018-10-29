@@ -3,9 +3,10 @@ import java.util.*;
 public class BoundedQueue <E> {
     // rep-invariant
     // rep is not null
+    // size > 0
 
     protected List<E> rep;
-    protected int size = 0;  // max size of queue
+    protected int size;  // max size of queue
 
     public BoundedQueue(int size) {
         if (size > 0) {
@@ -43,6 +44,8 @@ public class BoundedQueue <E> {
 
     public boolean repOK() {
         if ( rep == null ) {
+            return false;
+        } else if ( size < 1 ) {
             return false;
         }
         return true;

@@ -11,7 +11,7 @@ public class BoundedQueueTest {
 	
 	@Before
 	public void init() {
-		queue= new BoundedQueue<Integer>(6);
+		queue = new BoundedQueue<Integer>(6);
 	}
 	
 	@Test
@@ -21,6 +21,12 @@ public class BoundedQueueTest {
 		assertEquals(2,queue.getCount());
 		assertEquals(5,(int)queue.get());
 	}
+
+	@Test
+    public void TestRepOK() {
+        assertEquals(queue.repOK(), true);
+    }
+
 //	@Test
 //	public void TestPutAll() {
 //		List<Integer> list = new ArrayList<Integer>();
