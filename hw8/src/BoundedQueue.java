@@ -52,12 +52,9 @@ public class BoundedQueue <E> {
         // TODO implement and generify
     }
 
-    public void getAll(List<? extends E> list) {
-        int n = list.size();
-        for (int i = 0; i < n; i++) {
-            E e = list.get(i);
-            rep.add(e);
-        }
+    public void getAll(Collection<? super E> list) {
+        while(!isEmpty())
+            list.add(get());
     }
 
     public static void main(String args[]) {
