@@ -51,8 +51,12 @@ public class BoundedQueue <E> {
         return true;
     }
 
-    public void putAll() {
-        // TODO implement and generify
+    public void putAll(Iterable<? extends E> list) {
+        if (!isFull()) {
+            for (E e : list) {
+                put(e);
+            }
+        }
     }
 
     public void getAll(Collection<? super E> list) {

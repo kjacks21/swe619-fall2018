@@ -27,23 +27,23 @@ public class BoundedQueueTest {
         assertEquals(queue.repOK(), true);
     }
 
-//	@Test
-//	public void TestPutAll() {
-//		List<Integer> list = new ArrayList<Integer>();
-//		list.add(10);
-//		list.add(24);
-//		list.add(12);
-//		list.add(2);
-//
-//		queue.putAll(list);
-//		assertEquals(4,queue.getCount());
-//		int n=queue.getCount();
-//		for (int i = 0; i <n; i++) {
-//			int e = queue.get();
-//			assertEquals((int)list.get(i),e);
-//		}
-//
-//	}
+	@Test
+	public void TestPutAll() {
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(10);
+		list.add(24);
+		list.add(12);
+		list.add(2);
+
+		queue.putAll(list);
+		assertEquals(4,queue.getCount());
+		int n=queue.getCount();
+		for (int i = 0; i <n; i++) {
+			int e = queue.get();
+			assertEquals((int)list.get(i),e);
+		}
+
+	}
 	@Test
 	public void TestGetAll() {
 		List<Integer> list = new ArrayList<Integer>();
