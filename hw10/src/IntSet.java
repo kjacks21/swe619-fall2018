@@ -4,10 +4,10 @@ public class IntSet implements Cloneable {
     private List<Integer> els;
 
     @Override public boolean equals(Object obj) {
-        if (!(obj instanceof IntSet))
+        if (!(obj.getClass()==this.getClass()))
             return false;
         IntSet s = (IntSet) obj;
-        return els == s.els;
+        return els.equals(s.els);
     }
 
 
