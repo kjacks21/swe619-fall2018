@@ -33,4 +33,21 @@ public class IntSetTest {
 		assertTrue(clone2.equals(clone));
 	}
 
+	@Test
+    public void testHashCode() {
+        IntSet set = new IntSet();
+        IntSet clone = set.clone();
+
+        // reflexive
+        assertTrue(set.hashCode() == set.hashCode());
+
+        // symmetry
+        assertEquals(set.hashCode(), clone.hashCode());
+
+        // transitivity
+        IntSet clone2 = clone.clone();
+        assertEquals(set.hashCode(), clone2.hashCode());
+        assertEquals(clone2.hashCode(), clone.hashCode());
+    }
+
 }

@@ -12,8 +12,12 @@ public class IntSet implements Cloneable {
 
 
     @Override public int hashCode() {
-        // see below
-        return 42;
+        int result = 0;
+        for (Integer i : els) {
+//            result += i.hashCode();  // from class
+            result += 31 * result + i.hashCode();  // bloch
+        }
+        return result;
     }
 
     public IntSet () { els = new ArrayList<Integer>(); }
