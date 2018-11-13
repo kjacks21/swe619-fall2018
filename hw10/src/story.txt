@@ -1,0 +1,18 @@
+The problem with the clone method is that it doesn't allow for any subtypes.
+The current implementation of it is correct if we don't create any. 
+If we call the method from the subtype (currently commented out in IntSet), 
+it would raise a ClassCastException (as shown in the failing test testOldClone) 
+due to the fact that it creates a new IntSet instead. 
+
+By changing the implementation of clone to call super's clone method, the
+exception doesn't occur. It would create a clone of the super 
+(in this case is Object) which is cast to an IntSet. 
+Then we would only need to copy over any necessary values, 
+which in this case is els. 
+
+If a client wants to store our object in a container, such as Hash Maps, and we override equals(),
+then we must also override hashCode(). Returning a value of 42 was the default return value, which
+is correct, but a terrible choice because it ensures that every object hashes to the same
+bucket. This results in a linked list, which results in programs that run in quadratic time
+instead of linear time. Our implementation of hashCode() leverages Bloch's recipe for hashCode()
+and the implementation discussed in class.
