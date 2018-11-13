@@ -5,7 +5,14 @@ import static org.junit.Assert.assertTrue;
 
 public class IntSetTest {
 
-
+	@Test
+	public void testOldClone() {
+		IntSetSub set = new IntSetSub();
+		IntSetSub sub =(IntSetSub) set.clone();
+		assertTrue(sub!=set);
+		assertEquals(set.getClass(),sub.getClass());
+		
+	}
 	@Test
 	public void testClone() {
 		IntSet set = new IntSet();

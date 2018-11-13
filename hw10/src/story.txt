@@ -1,0 +1,13 @@
+The problem with the clone method is that it doesn't allow for any subtypes.
+The current implementation of it is correct if we don't create any. 
+If we call the method from the subtype (currently commented out in IntSet), 
+it would raise a ClassCastException (as shown in the failing test testOldClone) 
+due to the fact that it creates a new IntSet instead. 
+
+By changing the implementation of clone to call super's clone method, the
+exception doesn't occur. It would create a clone of the super 
+(in this case is Object) which is cast to an IntSet. 
+Then we would only need to copy over any necessary values, 
+which in this case is els. 
+
+
