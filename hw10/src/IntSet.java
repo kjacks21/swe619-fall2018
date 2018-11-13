@@ -24,9 +24,13 @@ public class IntSet implements Cloneable {
 
     private IntSet (List<Integer> list) { els = list; }
 
-    /*@Override public IntSet clone() {
-        return new IntSet (new ArrayList<Integer>(els));
-    }*/
+    // previous implementation
+//    @Override public IntSet clone() {
+//        return new IntSet (new ArrayList<Integer>(els));
+//    }
+
+
+    // our implementation
 	@Override public IntSet clone() {
 	   try {
 		 IntSet s = (IntSet) super.clone();
