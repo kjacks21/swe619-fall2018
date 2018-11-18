@@ -14,15 +14,15 @@ public class InstrumentedMap<K,V> extends ForwardingMap<K,V>{
 	   private final Map<K,V> s;
 
 	   public ForwardingMap(Map<K,V> s) { this.s = s; }
-	   public V put(K k, V v)        	{ return s.put(k,v); }
-	   public V remove(Object k)		{ return s.remove(k);}
+	   public V put(K k, V v)           { return s.put(k,v); }
+	   public V remove(Object k)        { return s.remove(k);}
 	   public boolean equals(Object o)  { return s.equals(o);}
-	   public int hashCode()      		{ return s.hashCode();}
-	   public String  toString()      	{ return s.toString();}
+	   public int hashCode()            { return s.hashCode();}
+	   public String  toString()        { return s.toString();}
 	  
 	   public void clear()              {s.clear();}
-	   public boolean isEmpty()			{ return s.isEmpty();}
-	   public int size() 				{ return s.size();}
+	   public boolean isEmpty()         {return s.isEmpty();}
+	   public int size()                {return s.size();}
 
 	   public void putAll(Map<? extends K,? extends V> m) 
 	   	                               { s.putAll(m);}
