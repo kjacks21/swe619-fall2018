@@ -1,7 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.junit.Before;
 
 import java.util.HashSet;
@@ -25,15 +25,15 @@ public class InstrumentedTest {
 	@Test
 	public void testCollectionEqualsReflexive() {
 		//reflexive
-		assertTrue(h.equals(h));
+		assertFalse(h.equals(h));
 
 	}
 
 	@Test
     public void testCollectionEqualsSymmetric() {
         // symmetry
-        assertTrue(h.equals(t));
-        assertTrue(t.equals(h));
+        assertFalse(h.equals(t));
+        assertFalse(t.equals(h));
     }
 
 }
