@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class InstrumentedList extends ForwardingList<E>{
+public class InstrumentedList<E> extends ForwardingList<E>{
     private int addCount = 0;
 
     public InstrumentedList(List<E> l){ super(l); }
