@@ -1,18 +1,24 @@
 import org.junit.Test;
 import org.junit.experimental.theories.DataPoint;
+import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
+
 
 @RunWith(Theories.class)
 public class IntSetTheoryTest {
 
-    @DataPoint
-    public static IntSetSub set = new IntSetSub();
+    //@DataPoint
+    //public static IntSetSub set = new IntSetSub();
 
+    @DataPoints
+    public static IntSet[] set2 = {new IntSet(), new IntSetSub(),new IntSet(),new IntSet()};
+    
 	@Test
 	public void testOldClone() {
 		IntSetSub set = new IntSetSub();
@@ -30,10 +36,12 @@ public class IntSetTheoryTest {
 		assertEquals(set.getClass(),clone.getClass());
 	}
 
-	@Test
-	public void testEquals() {
-		IntSet set = new IntSet();
+	@Theory
+	public void testEquals(IntSet set) {
+		assumeTrue(set!=null);
+		
 		IntSet clone = set.clone();
+		IntSet clone2 = clone.clone();
 
 		//reflexive
 		assertTrue(set.equals(set));
@@ -43,10 +51,10 @@ public class IntSetTheoryTest {
 		assertTrue(clone.equals(set));
 
 		// transitivity
-		IntSet clone2 = clone.clone();
 		assertTrue(set.equals(clone2));
 		assertTrue(clone2.equals(clone));
 	}
+
 
 	@Test
     public void testHashCode() {
