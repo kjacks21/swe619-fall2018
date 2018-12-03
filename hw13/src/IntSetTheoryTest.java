@@ -1,9 +1,17 @@
 import org.junit.Test;
+import org.junit.experimental.theories.DataPoint;
+import org.junit.experimental.theories.Theories;
+import org.junit.experimental.theories.Theory;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+@RunWith(Theories.class)
 public class IntSetTheoryTest {
+
+    @DataPoint
+    public static IntSetSub set = new IntSetSub();
 
 	@Test
 	public void testOldClone() {
@@ -13,9 +21,9 @@ public class IntSetTheoryTest {
 		assertEquals(set.getClass(),sub.getClass());
 		
 	}
-	@Test
-	public void testClone() {
-		IntSet set = new IntSet();
+
+	@Theory
+	public void testClone(IntSet set) {
 		IntSet clone = set.clone();
 		
 		assertTrue(set!=clone);
