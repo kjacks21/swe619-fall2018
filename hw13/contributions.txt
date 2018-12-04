@@ -7,16 +7,16 @@ Stefan Soto
 Their contributions are as follows:
 
 Stefan Soto
-
+- Converted the testEquals test method to use JUnit Theory
 - contributed to discussion regarding all facets of the assignment
 
 Kyle Jackson
-
+- Converted the testClone method to use JUnit Theory
 - contributed to discussion regarding all facets of the assignment
 
 
 Nat Greenwald
-
+- Converted the testHashCode method to use JUnit Theory
 - contributed to discussion regarding all facets of the assignment
 
 All project members attest that each member contributed substantially and equally.

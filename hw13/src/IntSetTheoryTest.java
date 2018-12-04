@@ -16,14 +16,14 @@ public class IntSetTheoryTest {
     @DataPoints
     public static IntSet[] set2 = {new IntSet(), new IntSetSub(),new IntSet(),new IntSet()};
     
-	@Test
-	public void testOldClone() {
-		IntSetSub set = new IntSetSub();
-		IntSetSub sub =(IntSetSub) set.clone();
-		assertTrue(sub!=set);
-		assertEquals(set.getClass(),sub.getClass());
-		
-	}
+//	@Test
+//	public void testOldClone() {
+//		IntSetSub set = new IntSetSub();
+//		IntSetSub sub =(IntSetSub) set.clone();
+//		assertTrue(sub!=set);
+//		assertEquals(set.getClass(),sub.getClass());
+//
+//	}
 
 	@Theory
 	public void testClone(IntSet set) {
