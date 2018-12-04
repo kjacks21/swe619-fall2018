@@ -55,9 +55,10 @@ public class IntSetTheoryTest {
 	}
 
 
-	@Test
-    public void testHashCode() {
-        IntSet set = new IntSet();
+	@Theory
+    public void testHashCode(IntSet set) {
+		assumeTrue(set!=null);
+
         IntSet clone = set.clone();
 
         // reflexive
