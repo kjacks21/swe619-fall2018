@@ -1,6 +1,7 @@
 For homework 13 we converted our homework 10 IntSet test cases to use
 theories. In doing so, we added an array of IntSets to be used as the
-DataPoints. 
+DataPoints. See IntSetTheoryTest.java.
 
 To convert the testEquals method, we added an IntSet parameter and an
-assumption that the parameter cannot be null.
+assumption that the parameter cannot be null. To convert the testClone method,
+we added an IntSet parameter and an assumption that the parameter cannot be null.

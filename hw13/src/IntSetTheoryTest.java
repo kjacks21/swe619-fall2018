@@ -13,9 +13,6 @@ import static org.junit.Assume.assumeTrue;
 @RunWith(Theories.class)
 public class IntSetTheoryTest {
 
-    //@DataPoint
-    //public static IntSetSub set = new IntSetSub();
-
     @DataPoints
     public static IntSet[] set2 = {new IntSet(), new IntSetSub(),new IntSet(),new IntSet()};
     
@@ -30,6 +27,8 @@ public class IntSetTheoryTest {
 
 	@Theory
 	public void testClone(IntSet set) {
+	    assumeTrue(set!=null);
+
 		IntSet clone = set.clone();
 		
 		assertTrue(set!=clone);
